@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sur al Click</title>
+<style>
+  :root {
+    --bg: #0b0c0f; --card: #16181d; --texto: #f2f2f2; --sub: #9a9ea7;
+    --acento: #ffcc33;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--texto);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 32px 16px 64px;
+  }
+  h1 { font-size: 1.4rem; margin: 8px 0 2px; }
+  p.tagline { color: var(--sub); margin: 0 0 28px; font-size: 0.95rem; text-align: center; }
+  .lista { width: 100%; max-width: 480px; display: flex; flex-direction: column; gap: 14px; }
+  .tarjeta {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--card); border-radius: 14px; padding: 10px;
+    text-decoration: none; color: var(--texto);
+    border: 1px solid #23262d;
+  }
+  .tarjeta img {
+    width: 64px; height: 64px; object-fit: contain; border-radius: 10px;
+    background: #fff; flex-shrink: 0;
+  }
+  .info { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .nombre {
+    font-size: 0.92rem; line-height: 1.3;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .precio { color: var(--acento); font-weight: 600; font-size: 0.95rem; }
+  .vacio { color: var(--sub); }
+  footer { margin-top: 36px; color: var(--sub); font-size: 0.78rem; text-align: center; }
+</style>
+</head>
+<body>
+  <h1>Sur al Click</h1>
+  <p class="tagline">Tecnología recomendada. Tocá un producto para verlo en Mercado Libre.</p>
+  <div class="lista">
+
+        <a class="tarjeta" href="https://www.mercadolibre.com.ar/social/matiasrd23?matt_word=matiasrd23&matt_tool=26335960&forceInApp=true&ref=BEZCvCB2mT3E8FWOXk3%2FZ8g1IdMAAgvPpGxb2EemM%2FdXnlyeK08gMnbBwFCF9gV1EX%2B%2BOXRYzBr0fk3Rtj0C8nEwoCpSKsy7OgahESLFVs9gVdtwnD5S8z3J%2BO7ppiaXDkHDcDbTI0CsAwJEqBMabTUFc5U2gMD6W8mPNWrCWaOGYlUhzvkgxu4YckmpcqR7EH%2BYMMY%3D" target="_blank" rel="noopener">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_703421-MLA104225933254_012026-F.jpg" alt="Pava Eléctrica Digital Novohome 2 Litros Pantalla Tactil Color Negro Acero Inoxidable Gran Capacidad XL" loading="lazy">
+          <div class="info">
+            <span class="nombre">Pava Eléctrica Digital Novohome 2 Litros Pantalla Tactil Color Negro Acero Inoxidable Gran Capacidad XL</span>
+            <span class="precio">$ 47.740</span>
+          </div>
+        </a>
+
+        <a class="tarjeta" href="https://www.mercadolibre.com.ar/social/matiasrd23?matt_word=matiasrd23&matt_tool=26335960&forceInApp=true&ref=BPOHGtukqEg%2BBqILpgNgPnoFtAIE0hJBHqThk4bk1XzMtZCGmN1hooEAMtsx55xGfqX51kkbzHC26EAUoxdzVh9DuI8Ll6ev8IxyJEORdq%2FF3%2BJYjXgw%2BFsKt7P3M7bbQWF0LkTzGQnMl5vrZSCBEZxmXUWWh23IPIv7N8Ks38W8kRZAiRSzNj5X3Vls0mTu3T57Vao%3D#origin=copy_link" target="_blank" rel="noopener">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_947679-MLA111667532550_062026-F.jpg" alt="Cámara De Seguridad Inalámbrica Exterior Wifi Ip Noax Ptz A6 360° Hd Micrófono Rj45 Sd Sensor De Movimiento Visión Nocturna App" loading="lazy">
+          <div class="info">
+            <span class="nombre">Cámara De Seguridad Inalámbrica Exterior Wifi Ip Noax Ptz A6 360° Hd Micrófono Rj45 Sd Sensor De Movimiento Visión Nocturna App</span>
+            <span class="precio">$ 30.799</span>
+          </div>
+        </a>
+
+        <a class="tarjeta" href="https://www.mercadolibre.com.ar/p/MLA47671534?matt_word=matiasrd23&matt_tool=26335960" target="_blank" rel="noopener">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_773271-MLA83522206951_042025-F.jpg" alt="Gel Limpiador Crema Hidratante Anti Imperfecciones Garnier 250ml" loading="lazy">
+          <div class="info">
+            <span class="nombre">Gel Limpiador Crema Hidratante Anti Imperfecciones Garnier 250ml</span>
+            <span class="precio">$ 19.999</span>
+          </div>
+        </a>
+
+        <a class="tarjeta" href="https://www.mercadolibre.com.ar/p/MLA61338750?matt_word=matiasrd23&matt_tool=26335960" target="_blank" rel="noopener">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_681642-MLA96072151630_102025-F.jpg" alt="Notebook Gadnic 14 Pulgadas Intel Celeron N4500 RAM 4GB SSD 128GB Cámara Frontal + Soporte" loading="lazy">
+          <div class="info">
+            <span class="nombre">Notebook Gadnic 14 Pulgadas Intel Celeron N4500 RAM 4GB SSD 128GB Cámara Frontal + Soporte</span>
+            <span class="precio">$ 527.499</span>
+          </div>
+        </a>
+  </div>
+  <footer>Link de afiliado: si comprás desde acá, gano una comisión sin costo extra para vos.</footer>
+</body>
+</html>
