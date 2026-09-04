@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sur al Click — conexión con TikTok</title>
+<style>
+  :root { --bg:#0b0c0f; --card:#16181d; --texto:#f2f2f2; --sub:#9a9ea7; --acento:#ffcc33; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--texto); padding:40px 18px;
+         font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         display:flex; flex-direction:column; align-items:center; }
+  .caja { width:100%; max-width:520px; background:var(--card); border:1px solid #23262d;
+          border-radius:14px; padding:20px; }
+  h1 { font-size:1.15rem; margin:0 0 6px; }
+  p { color:var(--sub); font-size:.9rem; line-height:1.5; margin:0 0 16px; }
+  code { display:block; background:#0b0c0f; border:1px solid #23262d; border-radius:10px;
+         padding:14px; font-size:.85rem; word-break:break-all; color:var(--acento);
+         margin-bottom:14px; }
+  button { width:100%; padding:13px; border:0; border-radius:10px; background:var(--acento);
+           color:#111; font-size:.95rem; font-weight:600; }
+  .err { color:#ff6b6b; }
+</style>
+</head>
+<body>
+  <div class="caja">
+    <h1>Conexión con TikTok</h1>
+    <p id="ayuda">Leyendo el código de autorización...</p>
+    <code id="code">—</code>
+    <button id="copiar" hidden>Copiar código</button>
+  </div>
+<script>
+  // TikTok redirige acá con ?code=XXXX&state=YYYY. Esta página no habla con
+  // ningún servidor: solo muestra el code para pegarlo en:
+  //   ./run.sh cli.py tiktok-auth --code XXXX
+  var p = new URLSearchParams(location.search);
+  var code = p.get('code'), err = p.get('error');
+  var elCode = document.getElementById('code');
+  var elAyuda = document.getElementById('ayuda');
+  var btn = document.getElementById('copiar');
+
+  if (code) {
+    elCode.textContent = code;
+    elAyuda.textContent = 'Copiá este código y pegalo en el servidor: ' +
+                          './run.sh cli.py tiktok-auth --code <código>';
+    btn.hidden = false;
+    btn.onclick = function () {
+      navigator.clipboard.writeText(code).then(function () {
+        btn.textContent = 'Copiado ✓';
+      }, function () {
+        btn.textContent = 'Copiá el código a mano';
+      });
+    };
+  } else if (err) {
+    elAyuda.className = 'err';
+    elAyuda.textContent = 'TikTok devolvió un error: ' + err +
+                          ' — ' + (p.get('error_description') || 'sin detalle');
+  } else {
+    elAyuda.textContent = 'Esta página es el punto de retorno del login de TikTok. ' +
+                          'Entrá desde el link que imprime cli.py tiktok-auth.';
+  }
+</script>
+</body>
+</html>
